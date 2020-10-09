@@ -28,7 +28,7 @@ function generatePassword() {
   // if 'true' the app will concatenate numChar and charArr into a new array
   if (confirmNum === true){
     var conOne = charArr.concat(numChar);
-    // if 'false' then the app will concatenate charArr with an empty 'conOne' into a new array
+    // if 'false' then the app will concatenate charArr with an empty 'conOne' array into a new array
   } else {
     var conOne = charArr.concat();
   }
@@ -53,11 +53,12 @@ function generatePassword() {
   
   console.log(conFour)
 
-/* NEXT STEPS: Pick out random characters according to the password length requirement.
-Then display the result on the viewport. You can use random.generator to pick our the
-random characters. Use a 'for loop' to pick out the exact password length. We will need
-to use 'math.random()' and 'for (i = 0; i < passwordLength; i++)'.
- */
+/* NEXT STEPS: Pick out the random characters according to the password length requirement.
+Then display the result on the viewport for the user to see. You can use random.generator to 
+pick our the random characters. Use a 'for loop' to pick out the exact password length. We 
+will need to use 'math.random()' and 'for (i = 0; i < passwordLength; i++)' to complete the 
+rest of the application. 
+*/
 
 }
 
