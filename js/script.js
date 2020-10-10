@@ -7,10 +7,11 @@ var upperABC = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 var specChar = ["!", "#", "$", "%", "&", "*", "@", "_"];
 var charArr = [];
 
+// function starts
 function generatePassword() {
 
   // passwordLength stores the value entered by the user
-  var passwordLength = prompt("How many characters would you like your password to have? Choose a number that is within the range of 8 to 128 characters.");
+  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Choose a number that is within the range of 8 to 128 characters."));
   console.log(passwordLength);
 
   // this 'if' statement returns an alert if the user enters a value that isn't within the specific range
@@ -50,19 +51,25 @@ function generatePassword() {
   } else {
     var conFour = conFour = conThree.concat();
   }
-  
   console.log(conFour)
+
+  var conFourString = conFour.toString();
+  console.log(conFourString);
+
+  for (i = 0; i < passwordLength; i++) {
+    var randomPassword = conFourString.charAt(Math.floor(Math.random() * conFourString.length));
+    console.log(randomPassword)
+  }
+
+}
+// function end
 
 /* NEXT STEPS: Pick out the random characters according to the password length requirement.
 Then display the result on the viewport for the user to see. You can use random.generator to 
-pick our the random characters. Use a 'for loop' to pick out the exact password length. We 
-will need to use 'math.random()' and 'for (i = 0; i < passwordLength; i++)' to complete the 
-rest of the application. 
+pick out the random characters. Use 'for (i = 0; i < passwordLength; i++)' to pick out the 
+exact password length. We will need to use 'math.random()' and to complete the rest of the 
+application. 
 */
-
-}
-
-// return password;
 
 // Write password to the #password input
 function writePassword() {
