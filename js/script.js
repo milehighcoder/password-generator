@@ -1,10 +1,10 @@
 
 // these variables store the initial application values that we will pull from late for the 'for loop'
 var generateBtn = document.querySelector("#generate");
-var numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var lowerABC = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperABC = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specChar = ["!", "#", "$", "%", "&", "*", "@", "_"];
+var numChar = '0123456789';
+var lowerABC = 'abcdefghizjklmnopqrstuvwxyz';
+var upperABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var specChar = '!#$%&*@_';
 var charArr = [];
 
 // function starts
@@ -12,7 +12,6 @@ function generatePassword() {
 
   // passwordLength stores the value entered by the user
   var passwordLength = parseInt(prompt("How many characters would you like your password to have? Choose a number that is within the range of 8 to 128 characters."));
-  console.log(passwordLength);
 
   // this 'if' statement returns an alert if the user enters a value that isn't within the specific range
   if (passwordLength < 8 || passwordLength > 128) {
@@ -51,25 +50,23 @@ function generatePassword() {
   } else {
     var conFour = conFour = conThree.concat();
   }
-  console.log(conFour)
 
   var conFourString = conFour.toString();
-  console.log(conFourString);
+
+  var result = '';
 
   for (i = 0; i < passwordLength; i++) {
     var randomPassword = conFourString.charAt(Math.floor(Math.random() * conFourString.length));
     console.log(randomPassword)
+    var result = randomPassword.concat(result);
+    console.log(result);
   }
 
-}
-// function end
+  return result;
 
-/* NEXT STEPS: Pick out the random characters according to the password length requirement.
-Then display the result on the viewport for the user to see. You can use random.generator to 
-pick out the random characters. Use 'for (i = 0; i < passwordLength; i++)' to pick out the 
-exact password length. We will need to use 'math.random()' and to complete the rest of the 
-application. 
-*/
+}
+
+// function end
 
 // Write password to the #password input
 function writePassword() {
